@@ -12,6 +12,10 @@ bot.on('ready', () => {
   console.log('Slime is bouncing');
 });
 
+bot.on('ready', () => {
+  bot.user.setGame('Bouncing Around!')
+})
+
 bot.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
@@ -20,6 +24,7 @@ bot.on('message', message => {
   command = command.slice(config.prefix.length);
 
   let args = message.content.split(" ").slice(1);
+
 
 
 
@@ -74,6 +79,10 @@ if (command === "help") {
 
 if (command === "pet") {
     message.channel.send("Slime rolls in excitement");
+}
+
+if (command === "setgame") {
+  bot.user.setGame(args.join(" "));
 }
 
 if (command === "transform"){
@@ -183,7 +192,7 @@ if (command === "radioactive") {
   }
 
 
- 
+
 });
 
 bot.login(config.token);
