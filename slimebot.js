@@ -38,8 +38,8 @@ if (command === "devs") {
     icon_url: bot.user.avatarURL
 },
  fields: [{
-        name: "Game Dev",
-        value: "<@235868887348936706>",
+        name: "Game Devs",
+        value: "<@235868887348936706> <@148953784280809474>",
       },
       
       {
