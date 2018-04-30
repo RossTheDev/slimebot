@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 new Discord.RichEmbed();
-const newUsers = new Discord.Collection();
-const music = require('discord.js-music');
+
 
 
 
@@ -13,7 +12,7 @@ bot.on('ready', () => {
 });
 
 bot.on('ready', () => {
-  bot.user.setGame('Bouncing Around!')
+  bot.user.setActivity('Bouncing Around!')
 })
 
 bot.on('message', message => {
@@ -28,11 +27,13 @@ bot.on('message', message => {
 
 
 
+
+
 // commands
 
 if (command === "devs") {
     message.channel.send({embed: {
-    color: 7506394, 
+    color: 7506394,
     author: {
     name: "Bot Builders",
     icon_url: bot.user.avatarURL
@@ -41,23 +42,23 @@ if (command === "devs") {
         name: "Game Devs",
         value: "<@235868887348936706> <@148953784280809474>",
       },
-      
+
       {
         name: "Bot Dev",
         value: " <@148953784280809474>",
       },
-      
+
             {
         name: "Artist",
         value: "<@306381311923453953>",
       },
-      
+
        {
         name: "Translator(s)",
-        value: "<@192334250136043520> <@207294581266579457> <@252675291187642369> <@144752887854137354>",   
+        value: "<@192334250136043520> <@207294581266579457> <@252675291187642369> <@144752887854137354>",
       },
-      
-      
+
+
    //   {
    //     name: "other contributers",
    //     value: "",
@@ -70,8 +71,8 @@ if (command === "devs") {
   }
 });
 }
- 
-//misc commands 
+
+//misc commands
 
 if (command === "help") {
     message.channel.send("A companion for the slime game. Commands: *pet, *feed, *adopt, *attack, *jump, *hug, *transform, *run, *play, *cards");
@@ -130,7 +131,7 @@ if (command === "say") {
 }
 
 
-//cards 
+//cards
 
 if (command === "police") {
     message.channel.send("https://imgur.com/iGzA8W2");
@@ -151,51 +152,54 @@ if (command === "yellow") {
 if (command === "wizard") {
     message.channel.send("https://imgur.com/ZH5R6jZ");
 }
-  
-  
-    
+
+
+
 if (command === "clone") {
     message.channel.send("https://imgur.com/UCsFAua");
-}    
+}
 
 if (command === "scribe") {
     message.channel.send("https://imgur.com/lCq7KOD");
-}    
+}
 
 if (command === "rainbow") {
     message.channel.send("https://imgur.com/5FTo851");
-}    
+}
 
 if (command === "radioactive") {
     message.channel.send("https://imgur.com/mnszIAr");
-}  
+}
 
 //admin
   if(command === "kick") {
     if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
-    
+
     let member = message.mentions.members.first();
     if(!member)
       return message.reply("Please @ a member of the server!");
-    if(!member.kickable) 
+    if(!member.kickable)
       return message.reply("Unable to kick, Check Roles and Permissions");
-    
+
     let reason = args.slice(1).join(' ');
     if(!reason)
       return message.reply("Please Give A Reason");
-    
+
      member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
 
   }
 
+  if (command === "announce") {
+      message.channel.send({embed: {
+    color: 43115,
+    description: args.join(" ")
+  }});
+  }
 
 
 });
 
 bot.login(config.token);
-
-
-
