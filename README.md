@@ -4,7 +4,7 @@ Slime bot is a companion bot for discord. Slime bot is a pet slime you can adopt
 # Made with:
 Discord.js (https://discord.js.org/#/)
 
-IDE: (C9.io)
+Editor: Atom
 
 Node.js (https://nodejs.org/en/)
 
