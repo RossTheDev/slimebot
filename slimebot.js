@@ -5,7 +5,7 @@ new Discord.RichEmbed();
 
 
 
-const config = require("./config.json")
+const config = require("./slimeconfig.json")
 
 bot.on('ready', () => {
   console.log('Slime is bouncing');
@@ -40,12 +40,12 @@ if (command === "devs") {
 },
  fields: [{
         name: "Game Devs",
-        value: "<@235868887348936706> <@148953784280809474>",
+        value: "<@183606398700093440> <@478026812048408581>",
       },
 
       {
         name: "Bot Dev",
-        value: " <@148953784280809474>",
+        value: " <@478026812048408581>",
       },
 
             {
@@ -53,10 +53,6 @@ if (command === "devs") {
         value: "<@306381311923453953>",
       },
 
-       {
-        name: "Translator(s)",
-        value: "<@192334250136043520> <@207294581266579457> <@252675291187642369> <@144752887854137354>",
-      },
 
 
    //   {
@@ -75,24 +71,18 @@ if (command === "devs") {
 //misc commands
 
 if (command === "help") {
-    message.channel.send("A companion for the slime game. Commands: *pet, *feed, *adopt, *attack, *jump, *hug, *transform, *run, *play, *cards");
+    message.channel.send("A companion for the slime game. Commands: *pet, *feed, *adopt, *attack, *jump, *hug, *transform, *run, *play,");
 }
 
 if (command === "pet") {
     message.channel.send("Slime rolls in excitement");
 }
 
-if (command === "setgame") {
-  bot.user.setGame(args.join(" "));
-}
 
 if (command === "transform"){
     message.channel.send("https://imgur.com/a/mIQsG")
 }
 
-if (command === "cards") {
-    message.channel.send("*police *fire *smallslime *yellow *wizard *clone *scribe *rainbow *radioactive");
-}
 
 
 if (command === "feed") {
@@ -120,56 +110,12 @@ if (command === "hug") {
 }
 
 if (command === "play"){
-    message.channel.send("https://kodystonedev.itch.io/slime-ccg");
-}
-
-if (command === "say") {
-    message.channel.send({embed: {
-  color: 7506394,
-  description: args.join(" ")
-}});
-}
-
-
-//cards
-
-if (command === "police") {
-    message.channel.send("https://imgur.com/iGzA8W2");
-}
-
-if (command === "fire") {
-    message.channel.send("https://imgur.com/lKs1JdU");
-}
-
-if (command === "smallslime") {
-    message.channel.send("https://imgur.com/a/Homup");
-}
-
-if (command === "yellow") {
-    message.channel.send("https://imgur.com/RHaTm5i");
-}
-
-if (command === "wizard") {
-    message.channel.send("https://imgur.com/ZH5R6jZ");
+    message.channel.send("Coming soon!");
 }
 
 
 
-if (command === "clone") {
-    message.channel.send("https://imgur.com/UCsFAua");
-}
 
-if (command === "scribe") {
-    message.channel.send("https://imgur.com/lCq7KOD");
-}
-
-if (command === "rainbow") {
-    message.channel.send("https://imgur.com/5FTo851");
-}
-
-if (command === "radioactive") {
-    message.channel.send("https://imgur.com/mnszIAr");
-}
 
 //admin
   if(command === "kick") {
